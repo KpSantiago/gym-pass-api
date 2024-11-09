@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "i4eFM1Ghj5GEMfGvGJJiYZJKyP0bJL8SLPeSm9RkJkef/K5lAvgKChDkJwYAekP+2IixzdPNCaWfCw0ILVZyQQ==",
+  "dgSpecHash": "M8YTIk3+evf6ZOuOcy9/Miy3jIptrwXNKxPWh40beqUFHvxwYsoGjdTQgUVZYMq0wRueUmgETS2d9ITLOZBGaQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\santi\\Documents\\programming\\Estudos\\.net-bootcamp\\DDD-API-dotNET\\DDDApplication.Application\\DDDApplication.Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\santi\\.nuget\\packages\\cryptohelper\\4.0.0\\cryptohelper.4.0.0.nupkg.sha512",
+    "C:\\Users\\santi\\.nuget\\packages\\mediatr\\12.4.1\\mediatr.12.4.1.nupkg.sha512",
+    "C:\\Users\\santi\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\santi\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.1\\microsoft.aspnetcore.cryptography.internal.8.0.1.nupkg.sha512",
+    "C:\\Users\\santi\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\8.0.1\\microsoft.aspnetcore.cryptography.keyderivation.8.0.1.nupkg.sha512",
+    "C:\\Users\\santi\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
