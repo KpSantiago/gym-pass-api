@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Entities;
 
@@ -10,10 +11,12 @@ public class UserRole
 
     [StringLength(64)]
     [Required]
+    [ForeignKey("User")]
     public string UserId { get; set; } = default!;
 
     [StringLength(64)]
     [Required]
+    [ForeignKey("Role")]
     public string RoleId { get; set; } = default!;
 
     private UserRole(string? id, string userId, string roleId)

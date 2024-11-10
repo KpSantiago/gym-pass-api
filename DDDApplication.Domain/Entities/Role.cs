@@ -13,6 +13,7 @@ public class Role
     [Required]
     public string Name { get; set; } = default!;
 
+    public ICollection<User> Users { get; set; } = default!;
 
     private Role(string? id, string name)
     {

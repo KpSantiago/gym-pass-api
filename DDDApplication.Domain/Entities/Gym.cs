@@ -33,9 +33,9 @@ public class Gym
         CreatedAt = createdAt;
     }
 
-    public static Gym Create(string? id, Cordinate cordinate, DateTime createdAt, string title, string description = "", string phone = "")
+    public static Gym Create(string? id, Cordinate cordinate, DateTime? createdAt, string title, string description = "", string phone = "")
     {
-        Gym gym = new(id, cordinate, createdAt, title, description, phone);
+        Gym gym = new(id, cordinate, createdAt ?? DateTime.UtcNow, title, description, phone);
 
         return gym;
     }
