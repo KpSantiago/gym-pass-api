@@ -2,6 +2,7 @@ using DDDApplication.Application.CQRs.Commands.Requests;
 using DDDApplication.Application.CQRs.Commands.Responses;
 using Domain.Repositories;
 using MediatR;
+using Shared.Exceptions;
 
 namespace DDDApplication.Application.CQRs.Commands.Handlers;
 
@@ -20,7 +21,7 @@ public class ValidateCheckInCommandHandler : IRequestHandler<ValidateCheckInComm
 
         if (checkIn == null)
         {
-            throw new ArgumentException("Este check-in não existe.");
+            throw new NotFoundRegisterException("Este check-in não existe.");
         }
 
         DateTime today = DateTime.UtcNow;

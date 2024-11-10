@@ -1,8 +1,10 @@
 using DDDApplication.Application.CQRs.Commands.Requests;
 using DDDApplication.Application.CQRs.Commands.Responses;
+using DDDApplication.Shared.Exceptions;
 using Domain.Entities;
 using Domain.Repositories;
 using MediatR;
+using Shared.Exceptions;
 
 namespace DDDApplication.Application.CQRs.Commands.Handlers;
 
@@ -25,14 +27,14 @@ public class CheckInCommandHandler : IRequestHandler<CheckInCommand, CheckInResp
 
         if (doesUserExist == null)
         {
-            throw new ArgumentException("Usuário não existe.");
+            throw new NotFoundRegisterException("Usuário não existe.");
         }
 
         var doesGymExist = await _gymsRepository.FindById(request.GymId);
 
         if (doesGymExist == null)
         {
-            throw new ArgumentException("A academia não existe.");
+            throw new NotFoundRegisterException("A academia não existe.");
         }
 
         DateTime today = DateTime.Now;
@@ -41,7 +43,7 @@ public class CheckInCommandHandler : IRequestHandler<CheckInCommand, CheckInResp
 
         if (doesUserAlreadyHaveACheckInToday != null)
         {
-            throw new ArgumentException("Usuário já tem um check-in hoje");
+            throw new ConflictInfosExcpetion("Usuário já tem um check-in hoje");
         }
 
         var result = await _checkInsRepository.Create(CheckIn.Create(

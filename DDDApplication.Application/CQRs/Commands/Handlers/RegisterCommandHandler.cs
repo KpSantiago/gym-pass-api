@@ -1,5 +1,6 @@
 using DDDApplication.Application.CQRs.Commands.Requests;
 using DDDApplication.Application.CQRs.Commands.Responses;
+using DDDApplication.Shared.Exceptions;
 using Domain.Entities;
 using Domain.Repositories;
 using MediatR;
@@ -19,7 +20,7 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, RegisterR
 
         if (userAlreadyExists != null)
         {
-            throw new ArgumentException("Usuário já existe.");
+            throw new ConflictInfosExcpetion("Usuário já existe.");
         }
 
         string hashedPassword = CryptoHelper.Crypto.HashPassword(request.Password);
