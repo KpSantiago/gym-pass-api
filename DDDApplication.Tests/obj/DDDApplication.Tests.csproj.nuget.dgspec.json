@@ -29,8 +29,8 @@
               "C:\\Users\\santi\\Documents\\programming\\Estudos\\.net-bootcamp\\DDD-API-dotNET\\DDDApplication.Domain\\Domain.csproj": {
                 "projectPath": "C:\\Users\\santi\\Documents\\programming\\Estudos\\.net-bootcamp\\DDD-API-dotNET\\DDDApplication.Domain\\Domain.csproj"
               },
-              "C:\\Users\\santi\\Documents\\programming\\Estudos\\.net-bootcamp\\DDD-API-dotNET\\Shared\\Shared.csproj": {
-                "projectPath": "C:\\Users\\santi\\Documents\\programming\\Estudos\\.net-bootcamp\\DDD-API-dotNET\\Shared\\Shared.csproj"
+              "C:\\Users\\santi\\Documents\\programming\\Estudos\\.net-bootcamp\\DDD-API-dotNET\\DDDApplication.Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\santi\\Documents\\programming\\Estudos\\.net-bootcamp\\DDD-API-dotNET\\DDDApplication.Shared\\Shared.csproj"
               }
             }
           }
@@ -127,6 +127,59 @@
         }
       }
     },
+    "C:\\Users\\santi\\Documents\\programming\\Estudos\\.net-bootcamp\\DDD-API-dotNET\\DDDApplication.Shared\\Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\santi\\Documents\\programming\\Estudos\\.net-bootcamp\\DDD-API-dotNET\\DDDApplication.Shared\\Shared.csproj",
+        "projectName": "Shared",
+        "projectPath": "C:\\Users\\santi\\Documents\\programming\\Estudos\\.net-bootcamp\\DDD-API-dotNET\\DDDApplication.Shared\\Shared.csproj",
+        "packagesPath": "C:\\Users\\santi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\santi\\Documents\\programming\\Estudos\\.net-bootcamp\\DDD-API-dotNET\\DDDApplication.Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\santi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.427\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\santi\\Documents\\programming\\Estudos\\.net-bootcamp\\DDD-API-dotNET\\DDDApplication.Tests\\DDDApplication.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -155,8 +208,8 @@
               "C:\\Users\\santi\\Documents\\programming\\Estudos\\.net-bootcamp\\DDD-API-dotNET\\DDDApplication.Domain\\Domain.csproj": {
                 "projectPath": "C:\\Users\\santi\\Documents\\programming\\Estudos\\.net-bootcamp\\DDD-API-dotNET\\DDDApplication.Domain\\Domain.csproj"
               },
-              "C:\\Users\\santi\\Documents\\programming\\Estudos\\.net-bootcamp\\DDD-API-dotNET\\Shared\\Shared.csproj": {
-                "projectPath": "C:\\Users\\santi\\Documents\\programming\\Estudos\\.net-bootcamp\\DDD-API-dotNET\\Shared\\Shared.csproj"
+              "C:\\Users\\santi\\Documents\\programming\\Estudos\\.net-bootcamp\\DDD-API-dotNET\\DDDApplication.Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\santi\\Documents\\programming\\Estudos\\.net-bootcamp\\DDD-API-dotNET\\DDDApplication.Shared\\Shared.csproj"
               }
             }
           }
@@ -196,59 +249,6 @@
               "version": "[2.4.3, )"
             }
           },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.427\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\santi\\Documents\\programming\\Estudos\\.net-bootcamp\\DDD-API-dotNET\\Shared\\Shared.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\santi\\Documents\\programming\\Estudos\\.net-bootcamp\\DDD-API-dotNET\\Shared\\Shared.csproj",
-        "projectName": "Shared",
-        "projectPath": "C:\\Users\\santi\\Documents\\programming\\Estudos\\.net-bootcamp\\DDD-API-dotNET\\Shared\\Shared.csproj",
-        "packagesPath": "C:\\Users\\santi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\santi\\Documents\\programming\\Estudos\\.net-bootcamp\\DDD-API-dotNET\\Shared\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\santi\\AppData\\Roaming\\NuGet\\NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0"
-        ],
-        "sources": {
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
           "imports": [
             "net461",
             "net462",

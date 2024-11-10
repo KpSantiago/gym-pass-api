@@ -6493,8 +6493,8 @@
     },
     "Shared/1.0.0": {
       "type": "project",
-      "path": "../Shared/Shared.csproj",
-      "msbuildProject": "../Shared/Shared.csproj"
+      "path": "../DDDApplication.Shared/Shared.csproj",
+      "msbuildProject": "../DDDApplication.Shared/Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6540,8 +6540,8 @@
             "C:\\Users\\santi\\Documents\\programming\\Estudos\\.net-bootcamp\\DDD-API-dotNET\\DDDApplication.Domain\\Domain.csproj": {
               "projectPath": "C:\\Users\\santi\\Documents\\programming\\Estudos\\.net-bootcamp\\DDD-API-dotNET\\DDDApplication.Domain\\Domain.csproj"
             },
-            "C:\\Users\\santi\\Documents\\programming\\Estudos\\.net-bootcamp\\DDD-API-dotNET\\Shared\\Shared.csproj": {
-              "projectPath": "C:\\Users\\santi\\Documents\\programming\\Estudos\\.net-bootcamp\\DDD-API-dotNET\\Shared\\Shared.csproj"
+            "C:\\Users\\santi\\Documents\\programming\\Estudos\\.net-bootcamp\\DDD-API-dotNET\\DDDApplication.Shared\\Shared.csproj": {
+              "projectPath": "C:\\Users\\santi\\Documents\\programming\\Estudos\\.net-bootcamp\\DDD-API-dotNET\\DDDApplication.Shared\\Shared.csproj"
             }
           }
         }

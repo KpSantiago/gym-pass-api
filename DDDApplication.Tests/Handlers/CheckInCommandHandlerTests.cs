@@ -2,10 +2,12 @@ using DDDApplication.Application.CQRs.Commands.Handlers;
 using DDDApplication.Application.CQRs.Commands.Requests;
 using DDDApplication.Application.CQRs.Commands.Responses;
 using DDDApplication.Application.Repositories;
+using DDDApplication.Shared.Exceptions;
 using Domain.Entities;
 using Domain.Repositories;
 using Domain.ValueObjects;
 using FluentAssertions;
+using Shared.Exceptions;
 
 namespace DDDApplication.Tests.Handlers;
 
@@ -51,14 +53,12 @@ public class CheckInCommandHandlerTests
     {
         var user = await _usersRaepository.Create(User.Create(null, "User", "user@email.com", "123456", null));
 
-        await _checkInsRaepository.Create(CheckIn.Create(null, user.Id, "gymId", null, null));
-
         var cts = new CancellationTokenSource();
         CancellationToken token = cts.Token;
 
-        await Assert.ThrowsAsync<ArgumentException>(() => _sut.Handle(new CheckInCommand
+        await Assert.ThrowsAsync<NotFoundRegisterException>(() => _sut.Handle(new CheckInCommand
         {
-            GymId = "gym-id",
+            GymId = "undefined",
             UserId = user.Id
         }, token));
     }
@@ -66,14 +66,19 @@ public class CheckInCommandHandlerTests
     [Fact]
     public async void Should_ThrowException_WhenUserAlreadyHasACheckIn()
     {
+        var gym = await _gymsRaepository.Create(Gym.Create(null, new Cordinate(0, 0), null, "Gym"));
         var user = await _usersRaepository.Create(User.Create(null, "User", "user@email.com", "123456", null));
+
+        var AnotherGym = await _gymsRaepository.Create(Gym.Create(null, new Cordinate(0, 0), null, "Gym"));
+        
+        await _checkInsRaepository.Create(CheckIn.Create(null, user.Id, gym.Id, null, null));
 
         var cts = new CancellationTokenSource();
         CancellationToken token = cts.Token;
 
-        await Assert.ThrowsAsync<ArgumentException>(() => _sut.Handle(new CheckInCommand
+        await Assert.ThrowsAsync<ConflictInfosExcpetion>(() => _sut.Handle(new CheckInCommand
         {
-            GymId = "undefined",
+            GymId = AnotherGym.Id,
             UserId = user.Id
         }, token));
     }

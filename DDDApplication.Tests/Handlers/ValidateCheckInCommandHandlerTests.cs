@@ -5,6 +5,7 @@ using DDDApplication.Application.Repositories;
 using Domain.Entities;
 using Domain.Repositories;
 using FluentAssertions;
+using Shared.Exceptions;
 
 namespace DDDApplication.Tests.Handlers;
 
@@ -42,7 +43,7 @@ public class ValidateCheckInCommandHandlerTests
         var cts = new CancellationTokenSource();
         CancellationToken token = cts.Token;
 
-        await Assert.ThrowsAsync<ArgumentException>(() => _sut.Handle(new ValidateCheckInCommand
+        await Assert.ThrowsAsync<NotFoundRegisterException>(() => _sut.Handle(new ValidateCheckInCommand
         {
             CheckInId = "undefined"
         }, token));

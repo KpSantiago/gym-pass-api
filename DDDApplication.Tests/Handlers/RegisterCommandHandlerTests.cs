@@ -3,9 +3,11 @@ using DDDApplication.Application.CQRs.Commands.Handlers;
 using DDDApplication.Application.CQRs.Commands.Requests;
 using DDDApplication.Application.CQRs.Commands.Responses;
 using DDDApplication.Application.Repositories;
+using DDDApplication.Shared.Exceptions;
 using Domain.Entities;
 using Domain.Repositories;
 using FluentAssertions;
+using Shared.Exceptions;
 
 namespace DDDApplication.Tests.Handlers;
 
@@ -55,7 +57,7 @@ public class RegisterCommandHandlerTests
         var cts = new CancellationTokenSource();
         CancellationToken token = cts.Token;
 
-        await Assert.ThrowsAsync<ArgumentException>(() => _sut.Handle(new RegisterCommand
+        await Assert.ThrowsAsync<ConflictInfosExcpetion>(() => _sut.Handle(new RegisterCommand
         {
             Email = "user@email.com",
             Name = "User",
