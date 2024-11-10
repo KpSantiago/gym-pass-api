@@ -19,14 +19,14 @@ public class InMemoryUsersRepository : IUsersRepository
 
     public Task<User?> FindByEmail(string email)
     {
-        var result = Users.Find(u => u.Email == email) ?? null;
+        var result = Users.Find(u => u.Email == email);
 
         return Task.FromResult(result);
     }
 
     public Task<User?> FindById(string id)
     {
-        var result = Users.Find(u => u.Id == id) ?? null;
+        var result = Users.Find(u => u.Id == id);
 
         return Task.FromResult(result);
     }
