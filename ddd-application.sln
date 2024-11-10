@@ -5,11 +5,11 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "DDDApplication.Domain\Domain.csproj", "{CE602093-C735-4361-B7F0-30C588FFE281}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDApplication.Application", "DDDApplication.Application\DDDApplication.Application.csproj", "{910FF4D7-5454-44BC-BD0D-83CB19803987}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "DDDApplication.Application\DDDApplication.Application.csproj", "{910FF4D7-5454-44BC-BD0D-83CB19803987}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{CA4E28CA-F86A-4157-A84B-41FA6B66570E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "DDDApplication.Shared\Shared.csproj", "{CA4E28CA-F86A-4157-A84B-41FA6B66570E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDApplication.Tests", "DDDApplication.Tests\DDDApplication.Tests.csproj", "{A951BA93-339B-4D52-9A14-F22C30EF8FE0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "DDDApplication.Tests\DDDApplication.Tests.csproj", "{A951BA93-339B-4D52-9A14-F22C30EF8FE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
