@@ -31,12 +31,20 @@
 
 3. **Infra (Infrastructure) e Application**
 
+<<<<<<< HEAD
 - **Infrastructure:**
+=======
+- **Infrastructure:** 
+>>>>>>> origin/main
     - ***Tipo de Projeto:*** Biblioteca de Classes
 
     - ***Responsabilidade:*** Implementa componentes de infraestrutura, como persistência de dados (contextos de banco de dados, repositórios concretos), serviços externos e outras dependências que suportam a aplicação.
 
+<<<<<<< HEAD
 - **Application:**
+=======
+- **Application:** 
+>>>>>>> origin/main
 
     - ***Tipo de Projeto:*** Biblioteca de Classes
 
