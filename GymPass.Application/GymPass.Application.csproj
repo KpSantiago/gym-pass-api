@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
@@ -9,7 +9,7 @@
     <PackageReference Include="MediatR" Version="6.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DDDApplication.Domain\GymPass.Domain.csproj" />
-    <ProjectReference Include="..\DDDApplication.Shared\GymPass.Shared.csproj" />
+    <ProjectReference Include="..\GymPass.Domain\GymPass.Domain.csproj" />
+    <ProjectReference Include="..\GymPass.Shared\GymPass.Shared.csproj" />
   </ItemGroup>
 </Project>
