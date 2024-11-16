@@ -12,7 +12,7 @@ public class GymPassContext : DbContext
     public DbSet<CheckIn> CheckIns { get; set; }
     public DbSet<Gym> Gyms { get; set; }
     
-    public GymPassContext(DbContextOptions<GymPassContext> options) : base(options) {}
+    public GymPassContext(DbContextOptions<GymPassContext> options) : base(options: options) {}
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -36,6 +36,8 @@ public class GymPassContext : DbContext
             .HasOne(c => c.Gym)
             .WithMany(g => g.CheckIns)
             .HasForeignKey(c => c.GymId);
+        
+        base.OnModelCreating(modelBuilder);
     }
 }
     
