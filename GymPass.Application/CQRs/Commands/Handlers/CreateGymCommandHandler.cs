@@ -9,7 +9,7 @@ namespace GymPass.Application.CQRs.Commands.Handlers;
 
 public class CreateGymCommandHandler : IRequestHandler<CreateGymCommand, CreateGymResponse>
 {
-    public readonly IGymsRepository _gymsRepository;
+    private readonly IGymsRepository _gymsRepository;
 
     public CreateGymCommandHandler(IGymsRepository gymsRepository)
     {
