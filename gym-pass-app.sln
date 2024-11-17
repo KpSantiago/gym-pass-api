@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymPass.Tests", "GymPass.Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymPass.Infrastructure", "GymPass.Infrastructure\GymPass.Infrastructure.csproj", "{024CB90E-754D-4450-8CA0-060D32BC2BE1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymPass.API", "GymPass.API\GymPass.API.csproj", "{3E67D507-C0A6-46F1-BC28-B885FFA86BC4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 		{024CB90E-754D-4450-8CA0-060D32BC2BE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{024CB90E-754D-4450-8CA0-060D32BC2BE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{024CB90E-754D-4450-8CA0-060D32BC2BE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E67D507-C0A6-46F1-BC28-B885FFA86BC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E67D507-C0A6-46F1-BC28-B885FFA86BC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E67D507-C0A6-46F1-BC28-B885FFA86BC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E67D507-C0A6-46F1-BC28-B885FFA86BC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
