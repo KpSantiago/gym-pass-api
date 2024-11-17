@@ -1,6 +1,6 @@
 namespace GymPass.Shared.Exceptions;
 
-public class IncorrectInfosException : ArgumentException
+public class IncorrectInfosException : RootException
 {   
-    public IncorrectInfosException(string message) : base(message) {}
+    public IncorrectInfosException(string message) : base(message, 400, "Bad Request") {}
 }

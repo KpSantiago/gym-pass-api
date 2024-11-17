@@ -1,6 +1,7 @@
 namespace GymPass.Shared.Exceptions;
 
-public class NotFoundRegisterException : ArgumentException
+public class NotFoundRegisterException : RootException
 {
-    public NotFoundRegisterException(string message) : base(message) {}
+    public NotFoundRegisterException(string message) : base(message, 404, "Not found")
+    {}
 }
