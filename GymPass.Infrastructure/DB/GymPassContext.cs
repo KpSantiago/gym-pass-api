@@ -36,6 +36,11 @@ public class GymPassContext : DbContext
             .HasOne(c => c.Gym)
             .WithMany(g => g.CheckIns)
             .HasForeignKey(c => c.GymId);
+
+        modelBuilder.Entity<Role>().HasData(
+            Role.Create(Guid.NewGuid().ToString(), "Admin"),
+            Role.Create(Guid.NewGuid().ToString(), "Client")
+        );
         
         base.OnModelCreating(modelBuilder);
     }
