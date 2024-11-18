@@ -1,3 +1,5 @@
+using System.Security.Claims;
+using GymPass.API.Middlewares;
 using GymPass.Application.CQRs.Commands.Requests;
 using GymPass.Application.CQRs.Commands.Responses;
 using MediatR;
@@ -24,6 +26,10 @@ public class CreateGymController : ControllerBase
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
     public async Task<IActionResult> Handle([FromBody] CreateGymCommand body)
     {
+        IEnumerable<Claim> userClaims = User.Claims;
+        
+        RolesMiddleware.VerifyRole("Admin", userClaims);
+        
         CreateGymResponse response = await _mediator.Send(body);
 
         return Created("", response);
