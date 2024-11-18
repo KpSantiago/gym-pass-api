@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace GymPass.API.Controllers.CheckIns;
 
 [ApiController]
-[Route("api/check-ins/user/{userId}/history")]
+[Route("api/v1/check-ins/user/{userId}/history")]
 [ApiExplorerSettings(GroupName = "Check-Ins")]
 public class FetchUserCheckInsHistoryController : ControllerBase
 {

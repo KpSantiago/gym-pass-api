@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace GymPass.API.Controllers.Gyms;
 
 [ApiController]
-[Route("api/gyms")]
+[Route("api/v1/gyms")]
 [ApiExplorerSettings(GroupName = "Gyms")]
 public class SearchGymController : ControllerBase
 {
