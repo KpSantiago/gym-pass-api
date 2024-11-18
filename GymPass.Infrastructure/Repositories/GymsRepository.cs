@@ -42,7 +42,7 @@ public class GymsRepository : IGymsRepository
 
     public async Task<List<Gym>> SearchMany(string query, int page)
     {
-        var result = await _context.Gyms.Where(g => g.Title.Contains(query)).Take(10).Skip(page).ToListAsync();
+        var result = await _context.Gyms.Where(g => g.Title.Contains(query)).Skip((page - 1) * page).Take(10).ToListAsync();
 
         return result;
     }

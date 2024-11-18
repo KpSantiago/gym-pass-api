@@ -21,9 +21,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Update="DB\GymPassContextFactory.cs">
-        <DependentUpon>GymPassContext.cs</DependentUpon>
-      </Compile>
+      <Folder Include="DB\Migrations\" />
     </ItemGroup>
 
 </Project>

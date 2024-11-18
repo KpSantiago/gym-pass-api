@@ -23,7 +23,7 @@ public class CheckInsRepository : ICheckInsRepository
 
     public async Task<List<CheckIn>> FindManyByUserId(string userId, int page)
     {
-        var result = await _context.CheckIns.Where(c => c.UserId == userId).Take(page * 10).ToListAsync();
+        var result = await _context.CheckIns.Where(c => c.UserId.Equals(userId)).Skip((page - 1) * 10).Take(10).ToListAsync();
 
         return result;
     }

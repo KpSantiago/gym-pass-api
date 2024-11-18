@@ -41,20 +41,12 @@ public class GymPassContext : DbContext
         adminRole.Id = 1;
         Role clientRole = Role.Create("Client");
         clientRole.Id = 2;
-        
+
         modelBuilder.Entity<Role>().HasData(
             adminRole,
             clientRole
         );
 
-        modelBuilder.Entity<UserRole>()
-            .HasOne(c => c.Role)
-            .WithMany(ur => ur.Users);
-
-        modelBuilder.Entity<UserRole>()
-            .HasOne(c => c.User)
-            .WithMany(ur => ur.Roles);
-        
         base.OnModelCreating(modelBuilder);
     }
 }
