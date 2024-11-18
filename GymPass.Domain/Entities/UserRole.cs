@@ -13,11 +13,13 @@ public class UserRole
     [Required]
     public string UserId { get; set; } = default!;
 
+    [ForeignKey("UserId")]
     public User User { get; set; } = default!;
 
     [Required]
     public int RoleId { get; set; } = default!;
 
+    [ForeignKey("RoleId")]
     public Role Role { get; set; } = default!;
 
     private UserRole(string? id, string userId, int roleId)
