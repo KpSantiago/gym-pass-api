@@ -2,7 +2,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace GymPass.Domain.ValueObjects;
 
-// TODO: Fazer a conversão de ValueObject em propriedades
 public class Cordinate
 {
     [Required]
