@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace GymPass.API.Controllers.CheckIns;
 
 [ApiController]
-[Route("api/v1/check-in")]
+[Route("api/v1/check-ins")]
 [ApiExplorerSettings(GroupName = "Check-Ins")]
 public class CheckInController : ControllerBase
 {
