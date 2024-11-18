@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GymPass.Infrastructure.DB.Migrations
 {
     [DbContext(typeof(GymPassContext))]
-    [Migration("20241118023002_ChangeRolePkType")]
-    partial class ChangeRolePkType
+    [Migration("20241118165347_AddRolesSeed")]
+    partial class AddRolesSeed
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -97,6 +97,18 @@ namespace GymPass.Infrastructure.DB.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Roles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Admin"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Client"
+                        });
                 });
 
             modelBuilder.Entity("GymPass.Domain.Entities.User", b =>

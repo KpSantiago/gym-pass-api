@@ -46,6 +46,14 @@ public class GymPassContext : DbContext
             adminRole,
             clientRole
         );
+
+        modelBuilder.Entity<UserRole>()
+            .HasOne(c => c.Role)
+            .WithMany(ur => ur.Users);
+
+        modelBuilder.Entity<UserRole>()
+            .HasOne(c => c.User)
+            .WithMany(ur => ur.Roles);
         
         base.OnModelCreating(modelBuilder);
     }

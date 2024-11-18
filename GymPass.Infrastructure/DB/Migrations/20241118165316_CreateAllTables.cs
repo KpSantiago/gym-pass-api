@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace GymPass.Infrastructure.DB.Migrations
 {
     /// <inheritdoc />
@@ -32,7 +34,8 @@ namespace GymPass.Infrastructure.DB.Migrations
                 name: "Roles",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
@@ -88,7 +91,7 @@ namespace GymPass.Infrastructure.DB.Migrations
                 {
                     Id = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
                     UserId = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
-                    RoleId = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false)
+                    RoleId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -105,6 +108,15 @@ namespace GymPass.Infrastructure.DB.Migrations
                         principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Roles",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Admin" },
+                    { 2, "Client" }
                 });
 
             migrationBuilder.CreateIndex(

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GymPass.Infrastructure.DB.Migrations
 {
     [DbContext(typeof(GymPassContext))]
-    [Migration("20241116024720_CreateAllTables")]
+    [Migration("20241118165316_CreateAllTables")]
     partial class CreateAllTables
     {
         /// <inheritdoc />
@@ -83,9 +83,11 @@ namespace GymPass.Infrastructure.DB.Migrations
 
             modelBuilder.Entity("GymPass.Domain.Entities.Role", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasMaxLength(64)
-                        .HasColumnType("nvarchar(64)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -95,6 +97,18 @@ namespace GymPass.Infrastructure.DB.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Roles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Admin"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Client"
+                        });
                 });
 
             modelBuilder.Entity("GymPass.Domain.Entities.User", b =>
@@ -131,10 +145,8 @@ namespace GymPass.Infrastructure.DB.Migrations
                         .HasMaxLength(64)
                         .HasColumnType("nvarchar(64)");
 
-                    b.Property<string>("RoleId")
-                        .IsRequired()
-                        .HasMaxLength(64)
-                        .HasColumnType("nvarchar(64)");
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
 
                     b.Property<string>("UserId")
                         .IsRequired()
