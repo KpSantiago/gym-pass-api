@@ -4,7 +4,7 @@ using MediatR;
 
 namespace GymPass.Application.CQRs.Queries.Requests;
 
-public class SeachGymsQuery : IRequest<SearchGymsQueryResponse>
+public class SearchGymsQuery : IRequest<SearchGymsQueryResponse>
 {
     [Required]
     public string Query { get; set; } = default!;
