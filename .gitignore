@@ -5,5 +5,5 @@ bin/
 # Settings
 appSettings*.json
 
-# JetBrains Rider 
-.idea/
+# Visual Studio
+.vs
