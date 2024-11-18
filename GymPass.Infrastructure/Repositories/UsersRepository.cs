@@ -24,15 +24,15 @@ public class UsersRepository : IUsersRepository
 
     public async Task<User?> FindByEmail(string email)
     {
-        var users = await _context.Users.ToListAsync();
+        var user = await _context.Users.Include(u => u.Roles).ThenInclude(ur => ur.Role).FirstOrDefaultAsync(u => u.Email.Equals(email));
 
-        return users.Find(u => u.Email == email);
+        return user;
     }
 
     public async Task<User?> FindById(string id)
     {
-        var result = await _context.Users.ToListAsync();
+        var result = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
 
-        return result.Find(u => u.Id == id);
+        return result;
     }
 }
