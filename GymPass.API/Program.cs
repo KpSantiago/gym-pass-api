@@ -35,7 +35,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(s =>
 {
-    s.SwaggerDoc("v1", new OpenApiInfo() { Version = "v1", Title = "Gym-Pass API" });
+    s.SwaggerDoc("v1", new OpenApiInfo() { Version = "v1", Title = "Gym-Pass API 2.0" });
     
     s.TagActionsBy(api => new List<string>()
     {
