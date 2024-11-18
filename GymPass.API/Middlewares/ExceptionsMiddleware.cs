@@ -34,28 +34,20 @@ public class ExceptionMiddleware
         }
     }
 
-    private static Task HandleExceptionAsync(HttpContext context, Exception exception)
+    private Task HandleExceptionAsync(HttpContext context, Exception exception)
     {
         context.Response.ContentType = "application/json";
-        context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+        context.Response.StatusCode = exception.GetErrorStatusCode();
 
-        if (exception is RootException)
-        {
-            return context.Response.WriteAsync(JsonConvert.SerializeObject(new ResponseError()
-            {
-                status = exception.GetErrorStatusCode(),
-                error = exception.GetErrorType(),
-                message = exception.Message,
-                timestamp = DateTime.Now
-            }));
-        }
 
-        return context.Response.WriteAsync(JsonConvert.SerializeObject(new ResponseError()
+        var responseError = new ResponseError()
         {
-            status = 500,
-            error = "Internal Server Error",
+            status = context.Response.StatusCode,
+            error = exception is RootException ? exception.GetErrorType() : "Internal Server Error",
             message = exception.Message,
-            timestamp = DateTime.Now
-        }));
+            timestamp = DateTime.UtcNow
+        };
+
+        return context.Response.WriteAsJsonAsync(responseError);
     }
 }
