@@ -1,4 +1,51 @@
-# Application with DDD in .NET C#
+# Gym-Pass API 2.0
+API para a gestão de check-ins em academias, feita em .NET 8 é uma recriação de uma antiga API feita em Node.js.
+Nela é possível realizar o gerenciamento de academias, check-ins e informações de usuário, abordando conceitos, como
+CQRS, RBAC, DDD e SOLID principles.
+
+#### Tecnologias usadas
+
+- .NET 8
+- ASP.NET
+- xUnit (Unit Testing)
+- Entity Framework Core
+- Swagger (Documentação de API)
+
+#### Conceitos usados
+
+- Domain-Driven Design (DDD)
+- SOLID principles
+- Role-Based Access Controll (RBAC)
+- Command Query Responsability Segregation (CQRS)
+
+
+`User`
+
+| Method | Path | Action |
+| ------ | ---- | ------ |
+| POST   | /api/v1/register | Realiza o cadastro de um novo usuário |
+| POST   | /api/v1/session  | Realiza a autenticação do usuário |
+| GET    | /api/v1/user/profile | Resgata as informações do usuário |
+
+`Gyms`
+
+| Method | Path | Action |
+| ------ | ---- | ------ |
+| POST   | /api/v1/gyms | Realiza o cadastro de uma nova academia (Apenas admin) |
+| GET    | /api/v1/nearby  | Busca as academias próxmias com base na localização do usuário |
+| GET    | /api/v1/dearch | Bucsa por academias |
+
+`Check-Ins`
+
+| Method | Path | Action |
+| ------ | ---- | ------ |
+| POST   | /api/v1/check-ins | Realiza o cadastro de um novo check-in |
+| GET    | /api/v1/check-ins/user/:userId/history  | Resgata o histórico de check-ins do usuário |
+| GET    | /api/v1/check-ins/user/:userId/metrics | Resgata as métricas de check-ins do usuário |
+| PATCH  | /api/v1/check-ins/:checkInId/validate | Faz a validação de um check-in ao chegar na academia |
+
+
+### Application with DDD in .NET C#
 ```plaintext
 /src
   /Domain
