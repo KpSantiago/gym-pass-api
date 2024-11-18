@@ -31,7 +31,7 @@ public class GymsRepository : IGymsRepository
 
     public async Task<List<Gym>> FindManyNearby(FindManyNearbyParams param)
     {
-        var result = await _context.Gyms.FromSqlRaw($@"
+        var result = await _context.Gyms.FromSql($@"
              await prisma.$queryRaw<Gym[]>`
             SELECT * from gyms
             WHERE ( 6371 * acos( cos( radians(${param.Latitude}) ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(${param.Longitude}) ) + sin( radians(${param.Latitude}) ) * sin( radians( latitude ) ) ) ) <= 10
