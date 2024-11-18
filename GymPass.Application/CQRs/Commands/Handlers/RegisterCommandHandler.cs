@@ -32,6 +32,11 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, RegisterR
             createdAt: null
         );
 
+        Role role = Role.Create("Admin");
+        role.Id = 1;
+
+        newUser.Roles = new List<UserRole>() { UserRole.Create(null, newUser.Id, role.Id) };
+
         var user = await _usersRepository.Create(newUser);
 
         return new RegisterResponse
