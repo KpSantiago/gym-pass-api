@@ -41,19 +41,19 @@ public class ExceptionMiddleware
         {
             return context.Response.WriteAsync(JsonConvert.SerializeObject(new ResponseError()
             {
-                Status = exception.GetErrorStatusCode(),
-                Error = exception.GetErrorType(),
-                Message = exception.Message,
-                Timestamp = DateTime.Now
+                status = exception.GetErrorStatusCode(),
+                error = exception.GetErrorType(),
+                message = exception.Message,
+                timestamp = DateTime.Now
             }));
         }
 
         return context.Response.WriteAsync(JsonConvert.SerializeObject(new ResponseError()
         {
-            Status = 500,
-            Error = "Internal Server Error",
-            Message = exception.Message,
-            Timestamp = DateTime.Now
+            status = 500,
+            error = "Internal Server Error",
+            message = exception.Message,
+            timestamp = DateTime.Now
         }));
     }
 }
