@@ -26,7 +26,7 @@ public class TokenService : ITokenService
         SecurityTokenDescriptor tokenSpecificationDescriptor = DescribeTokenSpecification(user, key);
         SecurityToken securityToken = handler.CreateToken(tokenSpecificationDescriptor);
         string token = handler.WriteToken(securityToken);
-        return new AccessToken(token, user.Name, user.Roles.First().Role.Name);
+        return new AccessToken(token, user.Name, user.Roles.FirstOrDefault() != null ? user.Roles.First().Role.Name : "N/A");
     }
 
     private SecurityTokenDescriptor DescribeTokenSpecification(User user, byte[] key)
