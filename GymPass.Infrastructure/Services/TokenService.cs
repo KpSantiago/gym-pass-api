@@ -17,8 +17,6 @@ public class TokenService : ITokenService
     {
         _configuration = configuration;
     }
-
-    // user.Roles.FirstOrDefault() != null  ? user.Roles.First().Role.Name
     
     public AccessToken GenerateToken(User user)
     {
@@ -28,7 +26,7 @@ public class TokenService : ITokenService
         SecurityTokenDescriptor tokenSpecificationDescriptor = DescribeTokenSpecification(user, key);
         SecurityToken securityToken = handler.CreateToken(tokenSpecificationDescriptor);
         string token = handler.WriteToken(securityToken);
-        return new AccessToken(token, user.Name, "Cliente");
+        return new AccessToken(token, user.Name, user.Roles.First().Role.Name);
     }
 
     private SecurityTokenDescriptor DescribeTokenSpecification(User user, byte[] key)
@@ -48,7 +46,7 @@ public class TokenService : ITokenService
         {
             new(JwtRegisteredClaimNames.Sub, user.Id),
             new(JwtRegisteredClaimNames.Name, user.Name),
-            new(ClaimTypes.Role, "Cliente"),
+            new(ClaimTypes.Role, user.Roles.FirstOrDefault() != null  ? user.Roles.First().Role.Name : "N/A"),
         });
         
         return claimsIdentity;
