@@ -39,7 +39,6 @@ public class ExceptionMiddleware
         context.Response.ContentType = "application/json";
         context.Response.StatusCode = exception.GetErrorStatusCode();
 
-
         var responseError = new ResponseError()
         {
             status = context.Response.StatusCode,

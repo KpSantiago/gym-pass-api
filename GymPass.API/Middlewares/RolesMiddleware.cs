@@ -7,7 +7,7 @@ public class RolesMiddleware
 {
     public static void VerifyRole(string matchRole, IEnumerable<Claim> userClaims)
     {
-        if (userClaims.FirstOrDefault(m => m.Type == ClaimTypes.Role && m.Value.ToLower().Equals(matchRole.ToLower())) is null)
+        if (userClaims.FirstOrDefault(m => m.Type.Equals(ClaimTypes.Role) && m.Value.ToLower().Equals(matchRole.ToLower())) is null)
         {
             throw new ForbiddenException("Usuário não é autorizado.");
         }

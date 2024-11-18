@@ -23,7 +23,7 @@ public class SearchGymController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(SearchGymsQueryResponse))]
     public async Task<IActionResult> Handle([FromQuery] string query, [FromQuery] int page)
     {
-        SeachGymsQuery gymsQuery = new()
+        SearchGymsQuery gymsQuery = new()
         {
             Query = query,
             Page = page
