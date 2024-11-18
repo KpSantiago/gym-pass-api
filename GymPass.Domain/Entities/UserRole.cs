@@ -16,21 +16,20 @@ public class UserRole
     [ForeignKey("UserId")]
     public User User { get; set; } = default!;
 
-    [StringLength(64)]
     [Required]
-    public string RoleId { get; set; } = default!;
+    public int RoleId { get; set; } = default!;
 
     [ForeignKey("RoleId")]
     public Role Role { get; set; } = default!;
 
-    private UserRole(string? id, string userId, string roleId)
+    private UserRole(string? id, string userId, int roleId)
     {
         Id = id ?? Guid.NewGuid().ToString();
         UserId = userId;
         RoleId = roleId;
     }
 
-    public static UserRole Create(string? id, string userId, string roleId)
+    public static UserRole Create(string? id, string userId, int roleId)
     {
         UserRole userRole = new(id, userId, roleId);
 

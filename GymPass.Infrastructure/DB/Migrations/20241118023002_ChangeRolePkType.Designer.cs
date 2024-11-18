@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GymPass.Infrastructure.DB.Migrations
 {
     [DbContext(typeof(GymPassContext))]
-    [Migration("20241116155806_AddRolesSeed")]
-    partial class AddRolesSeed
+    [Migration("20241118023002_ChangeRolePkType")]
+    partial class ChangeRolePkType
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -83,9 +83,11 @@ namespace GymPass.Infrastructure.DB.Migrations
 
             modelBuilder.Entity("GymPass.Domain.Entities.Role", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasMaxLength(64)
-                        .HasColumnType("nvarchar(64)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -95,18 +97,6 @@ namespace GymPass.Infrastructure.DB.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Roles");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "248636f9-3f73-48a2-a9c3-22f659eb0934",
-                            Name = "Admin"
-                        },
-                        new
-                        {
-                            Id = "b3cf9e81-b724-4787-89e9-7372938b0d39",
-                            Name = "Client"
-                        });
                 });
 
             modelBuilder.Entity("GymPass.Domain.Entities.User", b =>
@@ -143,10 +133,8 @@ namespace GymPass.Infrastructure.DB.Migrations
                         .HasMaxLength(64)
                         .HasColumnType("nvarchar(64)");
 
-                    b.Property<string>("RoleId")
-                        .IsRequired()
-                        .HasMaxLength(64)
-                        .HasColumnType("nvarchar(64)");
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
 
                     b.Property<string>("UserId")
                         .IsRequired()

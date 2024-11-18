@@ -7,7 +7,7 @@
 namespace GymPass.Infrastructure.DB.Migrations
 {
     /// <inheritdoc />
-    public partial class AddRolesSeed : Migration
+    public partial class RolesSeed : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -17,8 +17,8 @@ namespace GymPass.Infrastructure.DB.Migrations
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { "248636f9-3f73-48a2-a9c3-22f659eb0934", "Admin" },
-                    { "b3cf9e81-b724-4787-89e9-7372938b0d39", "Client" }
+                    { 1, "Admin" },
+                    { 2, "Client" }
                 });
         }
 
@@ -28,12 +28,12 @@ namespace GymPass.Infrastructure.DB.Migrations
             migrationBuilder.DeleteData(
                 table: "Roles",
                 keyColumn: "Id",
-                keyValue: "248636f9-3f73-48a2-a9c3-22f659eb0934");
+                keyValue: 1);
 
             migrationBuilder.DeleteData(
                 table: "Roles",
                 keyColumn: "Id",
-                keyValue: "b3cf9e81-b724-4787-89e9-7372938b0d39");
+                keyValue: 2);
         }
     }
 }
