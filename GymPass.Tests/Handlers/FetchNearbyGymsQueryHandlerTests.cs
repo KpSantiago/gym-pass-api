@@ -40,7 +40,7 @@ public class FetchNearbyGymsQueryHandlerTests
 
         FetchNearbyGymsResponse response = await _sut.Handle(new FetchNearbyGymsQuery()
         {
-            Cordinate = new Cordinate(1001, 1102)
+            Cordinate = new Cordinate(1001, 1101)
         }, token);
 
         // Assert
