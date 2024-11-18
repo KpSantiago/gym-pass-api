@@ -1,5 +1,4 @@
 using System.Data.Common;
-using System.Security.Cryptography.X509Certificates;
 using GymPass.Domain.Entities;
 using GymPass.Domain.Repositories;
 
@@ -39,7 +38,7 @@ public class InMemoryCheckInsRepository : ICheckInsRepository
 
     public Task<List<CheckIn>> FindManyByUserId(string userId, int page)
     {
-        var result = items.Where(i => i.Id == userId).Take(1 * 10).ToList();
+        var result = items.Where(i => i.UserId.Equals(userId)).Skip((page - 1) * 10).Take(10).ToList();
 
         return Task.FromResult(result);
     }

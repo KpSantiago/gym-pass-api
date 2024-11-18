@@ -30,7 +30,7 @@ public class InMemoryGymsRepository : IGymsRepository
 
     public Task<List<Gym>> SearchMany(string query, int page)
     {
-        var result = Task.FromResult(items.Where(i => i.Title.Contains(query)).Take(1 * 10).ToList());
+        var result = Task.FromResult(items.Where(i => i.Title.Contains(query)).Skip((page - 1) * 10).Take(10).ToList());
 
         return result;
     }
