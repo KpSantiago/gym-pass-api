@@ -4,6 +4,8 @@ using GymPass.Shared.Exceptions;
 using GymPass.Shared.Exceptions.ModuleExtensions;
 using Newtonsoft.Json;
 
+namespace GymPass.API.Middlewares;
+
 public class ExceptionMiddleware
 {
     private readonly RequestDelegate _next;
