@@ -33,7 +33,7 @@ CQRS, RBAC, DDD e SOLID principles.
 | ------ | ---- | ------ |
 | POST   | /api/v1/gyms | Realiza o cadastro de uma nova academia (Apenas admin) |
 | GET    | /api/v1/nearby  | Busca as academias próxmias com base na localização do usuário |
-| GET    | /api/v1/dearch | Bucsa por academias |
+| GET    | /api/v1/search | Busca por academias |
 
 `Check-Ins`
 
@@ -106,31 +106,31 @@ CQRS, RBAC, DDD e SOLID principles.
 
 ### RF(Requisitos funcionais)
 
-- [ ] Deve ser possível o usuário realizar cadastro;
-- [ ] Deve ser possível o usuário se autenticar;
-- [ ] Deve ser possível obter o perfil de um usuário logado;
-- [ ] Deve ser possível obter o número de check-in feitos pelo cliente logado;
-- [ ] Deve ser possível o cliente buscar academias proximas;
-- [ ] Deve ser possível o usuário buscar cliente pelo nome;
-- [ ] Deve ser possível o cliente realizar check-in em uma academia;
-- [ ] Deve ser possível validar o check-in de um cliente;
-- [ ] Deve ser possível cadastrar uma academia;
-- [ ] Deve ser possível o cliente obter seu histórico de check-ins
-- [ ] Deve ser possível obter o número de check-ins feitos pelo cliente logado
+- [x] Deve ser possível o usuário realizar cadastro;
+- [x] Deve ser possível o usuário se autenticar;
+- [x] Deve ser possível obter o perfil de um usuário logado;
+- [x] Deve ser possível obter o número de check-in feitos pelo cliente logado;
+- [x] Deve ser possível o cliente buscar academias proximas;
+- [x] Deve ser possível o usuário buscar cliente pelo nome;
+- [x] Deve ser possível o cliente realizar check-in em uma academia;
+- [x] Deve ser possível validar o check-in de um cliente;
+- [x] Deve ser possível cadastrar uma academia;
+- [x] Deve ser possível o cliente obter seu histórico de check-ins
+- [x] Deve ser possível obter o número de check-ins feitos pelo cliente logado
 
 
 ### RN(Regras de negócios)
 
-- [ ] O usuário não deve se cadastrar com um e-mail duplicado;
-- [ ] O usuário não pode fazer 2 check-ins no mesmo dia;
-- [ ] O usuário não deve fazer check-in se não estiver perto (100 metros) da academia;
-- [ ] O check-in só pode ser validado até 20 minutos após ter sido criado;
-- [ ] O check-in só pode ser validado por administradores;
-- [ ] A academia só poder cadastrada por administradores;
+- [x] O usuário não deve se cadastrar com um e-mail duplicado;
+- [x] O usuário não pode fazer 2 check-ins no mesmo dia;
+- [x] O usuário não deve fazer check-in se não estiver perto (100 metros) da academia;
+- [x] O check-in só pode ser validado até 20 minutos após ter sido criado;
+- [x] O check-in só pode ser validado por administradores;
+- [x] A academia só poder cadastrada por administradores;
 
 ### RNF(Requisitos não-funcionais)
 
-- [ ] A senha do usuário precisa ser criptografada
-- [ ] Os dados da aplicação precisam estar persistidos em bacno Postgres SQL;
-- [ ] Todas listas de dados precisam estar paginados com 20 items por página;
-- [ ] O usuário deve ser indentificado por token JWT(JSON Web Token);
+- [x] A senha do usuário precisa ser criptografada
+- [x] Os dados da aplicação precisam estar persistidos em bacno Postgres SQL;
+- [x] Todas listas de dados precisam estar paginados com 20 items por página;
+- [x] O usuário deve ser indentificado por token JWT(JSON Web Token);
