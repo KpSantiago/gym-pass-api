@@ -1,3 +1,4 @@
+using GymPass.Application.Utils;
 using GymPass.Domain.Entities;
 using GymPass.Domain.Repositories;
 
@@ -23,7 +24,13 @@ public class InMemoryGymsRepository : IGymsRepository
 
     public Task<List<Gym>> FindManyNearby(FindManyNearbyParams param)
     {
-        var result = Task.FromResult(items.Where(i => i.Cordinate.Latitude <= param.Latitude && i.Cordinate.Longitude <= param.Longitude).ToList());
+        
+        var result = Task.FromResult(items.Where(i =>
+        {
+            double distance = GetDistanceBetweenCordinatesUtil.GetDistance(param, i.Cordinate);
+
+            return distance < 10;
+        }).ToList());
 
         return result;
     }

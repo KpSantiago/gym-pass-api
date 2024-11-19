@@ -33,9 +33,7 @@ public class GymsRepository : IGymsRepository
     {
         var result = await _context.Gyms.FromSql($@"
             SELECT * from gyms
-            WHERE ( 6371 * acos( cos( radians(${param.Latitude}) ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(${param.Longitude}) ) + sin( radians(${param.Latitude}) ) * sin( radians( latitude ) ) ) ) <= 10
-        `;
-        ").ToListAsync();
+            WHERE ( 6371 * acos( cos( radians({param.Latitude}) ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians({param.Longitude}) ) + sin( radians({param.Latitude}) ) * sin( radians( latitude ) ) ) ) <= 10").ToListAsync();
 
         return result;
     }
