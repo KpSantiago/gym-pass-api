@@ -1,4 +1,5 @@
 using System.Security.Claims;
+using GymPass.API.HttpResponses;
 using GymPass.API.Middlewares;
 using GymPass.Application.CQRs.Commands.Requests;
 using GymPass.Application.CQRs.Commands.Responses;
@@ -24,6 +25,7 @@ public class CreateGymController : ControllerBase
     [Authorize]
     [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(CreateGymResponse))]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
+    [ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(ResponseError))]
     public async Task<IActionResult> Handle([FromBody] CreateGymCommand body)
     {
         IEnumerable<Claim> userClaims = User.Claims;
