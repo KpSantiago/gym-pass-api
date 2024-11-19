@@ -33,7 +33,7 @@ CQRS, RBAC, DDD e SOLID principles.
 | ------ | ---- | ------ |
 | POST   | /api/v1/gyms | Realiza o cadastro de uma nova academia (Apenas admin) |
 | GET    | /api/v1/nearby  | Busca as academias próxmias com base na localização do usuário |
-| GET    | /api/v1/search | Bucsa por academias |
+| GET    | /api/v1/search | Busca por academias |
 
 `Check-Ins`
 
